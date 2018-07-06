@@ -405,4 +405,19 @@ public class RedisUtils {
 //        return incrAndFormat(RedisConstant.CORE_PROXY_ABUTMENT_MERCHANT_INCR_APPID, 10);
 //    }
 
+    /**
+     * 只有key不存在时才缓存成功，否则缓存失败
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    public boolean setNX(final String key, final String value,final long time,final TimeUnit timeUnit) {
+        Boolean success = redisTemplate.opsForValue().setIfAbsent(key,value);
+        if (success) {
+            return expire(key, time,timeUnit);
+        }else{
+            return  false;
+        }
+    }
 }

@@ -32,7 +32,8 @@ public class RedisServiceImpl implements RedisService{
     @Override
     public String setRedisValue() {
         String redisKey = RedisConstant.FLAG_VALUE;
-        redisUtils.set(redisKey,"redis exercise SUCCESS",RedisConstant.DAY_TIME, RedisConstant.TIME_UNIT);
+        //设置缓存的key、value以及失效时间，失效一个小时，HOUR_TIME为小时，TIME_UNIT单位为秒
+        boolean booLock = redisUtils.setNX(redisKey,"2018-07-11日志",RedisConstant.HOUR_TIME, RedisConstant.TIME_UNIT);
         return "插入redis服务器成功";
     }
 

@@ -14,18 +14,24 @@ public interface RedisConstant {
 
     String MY_REDIS_NAME="core:proxy:abutment:merchant:0000000001:ac11f50c15c2429aac0b7f3912b2f911";
     String MY_HOPE="nameredis";
-    String FLAG_VALUE="20210608flag";
+    String FLAG_VALUE="20180626-redisValue";
 
     /**
-     * 设置过期时间，与TIME_UNIT配合
+     * 设置过期时间一天，与TIME_UNIT配合
      * 60*60*24
      */
     Long DAY_TIME = 86400L;
 
     /**
+     * 设置过期时间一小时，与TIME_UNIT配合
+     * 60*60
+     */
+    Long HOUR_TIME = 3600L;
+
+    /**
      * 过期时间单位，与TIME配合
      */
-    TimeUnit TIME_UNIT = TimeUnit.MINUTES;
+    TimeUnit TIME_UNIT = TimeUnit.SECONDS;
 
     /**
      * access_key 前缀
