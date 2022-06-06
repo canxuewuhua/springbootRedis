@@ -11,6 +11,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableCaching
 public class SpringBootRedisApplication {
 
+	/**
+	 * 主函数
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootRedisApplication.class, args);
 	}
