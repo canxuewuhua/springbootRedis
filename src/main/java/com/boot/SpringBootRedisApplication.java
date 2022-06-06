@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class SpringBootRedisApplication {
 
 	/**
-	 * 主函数
+	 * 主函数 加1
 	 * @param args
 	 */
 	public static void main(String[] args) {
